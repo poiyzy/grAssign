@@ -1,4 +1,4 @@
-# babel-plugin-gr-assign
+# babel-plugin-gr-assign [![Build Status](https://travis-ci.org/poiyzy/grAssign.svg?branch=master)](https://travis-ci.org/poiyzy/grAssign)
 
 Babel Plugin to transform method chaining to react-addons-update format.
 
