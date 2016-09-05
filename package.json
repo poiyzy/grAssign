@@ -1,14 +1,14 @@
 {
-  "name": "babel-plugin-glambda-assign",
+  "name": "babel-plugin-gr-assign",
   "version": "0.0.1",
-  "description": "Support lambda similar syntax to manipulate presist data.",
+  "description": "Support manipulating persist data with method chaining.",
   "main": "src/index.js",
   "scripts": {
     "test": "mocha --compilers js:babel-core/register 'test/case.js'",
     "test-sample": "node test/run.js test/sample.ms"
   },
   "keywords": [
-    "Immutable"
+    "immutable, persist"
   ],
   "author": "Roy Young",
   "license": "ISC",
