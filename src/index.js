@@ -79,7 +79,7 @@ module.exports = function(babel) {
                 '=',
                 lhs,
                 t.callExpression(
-                  grAssignMethod(),
+                  grAssignMethod(state && state.opts && state.opts.method),
                   replaceAssignmentExpression(t, l.object, arg, method_name)
                 )
               )

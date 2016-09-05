@@ -60,3 +60,5 @@ $_g = test2.a.b;
 $_g = test2.a.b.push(1);
 
 a.push(nextState);
+
+$_grAssign = test.a.b.c = some.c

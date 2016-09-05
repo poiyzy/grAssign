@@ -17,7 +17,8 @@ fs.readFile(fileName, function(err, data) {
   var out = babel.transform(src, {
     plugins: [
       [grAssign, {
-        alias: '$_g'
+        alias: '$_g',
+        method: 'ReactUpdate'
       }]
     ]
   });
