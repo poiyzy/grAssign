@@ -45,7 +45,7 @@ module.exports = function(babel) {
 
             var l = rhs.callee;
             var args = rhs.arguments;
-            var method_name = rhs.callee.property.name;
+            var method_name = rhs.callee && rhs.callee.property && rhs.callee.property.name;
 
             var arg;
 
