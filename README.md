@@ -12,16 +12,18 @@ Replace deep clone. No need to change a lot codes.
 
 ## Installation
 
-    Add in your `package.json`
+Add in your `package.json`
 
-    ```json
-    "devDependencies": {
-      ...
-      "babel-plugin-gr-assign": "git@github.com:poiyzy/grAssign.git"
-    },
-    ```
+```json
+"devDependencies": {
+  ...
+  "babel-plugin-gr-assign": "git@github.com:poiyzy/grAssign.git"
+},
+```
 
-    `npm install`
+```
+npm install
+```
 
 ## Feature
 
