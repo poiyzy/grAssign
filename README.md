@@ -16,7 +16,9 @@ Add in your `package.json`
 
 ```json
 "devDependencies": {
+
   ...
+
   "babel-plugin-gr-assign": "git@github.com:poiyzy/grAssign.git"
 },
 ```
@@ -77,7 +79,7 @@ $_grAssign = a.b[{index}].name.set('test');
 
 ```javascript
 $_grAssign = grUpdate(a, {
-  b: _defineProperty({}, index, {
+  b: Object._defineProperty({}, index, {
     name: {
       $set: 'test'
     }

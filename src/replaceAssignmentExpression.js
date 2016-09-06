@@ -1,6 +1,9 @@
 function _defineProperty(t, key, value) {
   return t.callExpression(
-    t.identifier('_defineProperty'),
+    t.memberExpression(
+      t.identifier('Object'),
+      t.identifier('_defineProperty')
+    ),
     [
       t.objectExpression([]),
       key,

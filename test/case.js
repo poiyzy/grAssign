@@ -73,7 +73,7 @@ describe('compile', () => {
   describe('get array index with [i]', () => {
     it('should be compiled', () => {
       expect(compile(`$_grAssign = test2.a.b.c[[i]].apply(function(e) {return e;});`)).toEqual(formatCode(
-        `$_grAssign = grUpdate(test2, { a: { b: { c: _defineProperty({}, i, { $apply: function(e) {return e;} }) } } });`
+        `$_grAssign = grUpdate(test2, { a: { b: { c: Object._defineProperty({}, i, { $apply: function(e) {return e;} }) } } });`
       ));
     });
   });
@@ -81,7 +81,7 @@ describe('compile', () => {
   describe('get array index with {i}', () => {
     it('should be compiled', () => {
       expect(compile(`$_grAssign = test2.a.b.c[{i}].apply(function(e) {return e;});`)).toEqual(formatCode(
-        `$_grAssign = grUpdate(test2, { a: { b: { c: _defineProperty({}, i, { $apply: function(e) {return e;} }) } } });`
+        `$_grAssign = grUpdate(test2, { a: { b: { c: Object._defineProperty({}, i, { $apply: function(e) {return e;} }) } } });`
       ));
     });
   });
