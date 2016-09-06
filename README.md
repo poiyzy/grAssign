@@ -5,17 +5,29 @@ Babel Plugin to transform method chaining to react-addons-update format.
 On purpose support manipulating presist data with method chaining.
 
 ## Why?
+
 TODO
+
+Replace deep clone. No need to change a lot codes.
 
 ## Installation
 
-    npm install babel-plugin-gr-assign --save-dev
+    Add in your `package.json`
+
+    ```json
+    "devDependencies": {
+      ...
+      "babel-plugin-gr-assign": "git@github.com:poiyzy/grAssign.git"
+    },
+    ```
+
+    `npm install`
 
 ## Feature
 
 支持将 `$_grAssign = a.b.c.d = 2;` 转换为:
 
-```
+```javascript
 $_grAssign = grUpdate(a, {
   b: {
     c: {
@@ -34,7 +46,7 @@ TODO
 
 ### babel 插件设置
 
-```
+```javascript
     plugins: [
       [grAssign, {
         alias: '$_g',
@@ -50,7 +62,7 @@ TODO
 
 使用 `a[{index}]` 或 `a[[index]]` 来标记 数组 index.
 
-```
+```javascript
 var $_grAssign;
 var a = { b: [{name: 1}, {name: 2}, {name: 3}] }
 
@@ -61,7 +73,7 @@ $_grAssign = a.b[{index}].name.set('test');
 
 会转化为：
 
-```
+```javascript
 $_grAssign = grUpdate(a, {
   b: {
     [index]: {
@@ -82,7 +94,7 @@ $_grAssign = grUpdate(a, {
 
     转换为
 
-    ```javascripts
+    ```javascript
       $_grAssign = grUpdate(a, {
         b: {
           c: {
@@ -98,7 +110,7 @@ $_grAssign = grUpdate(a, {
 
     转换为
 
-    ```javascripts
+    ```javascript
       $_grAssign = grUpdate(a, {
         b: {
           c: {
@@ -114,7 +126,7 @@ $_grAssign = grUpdate(a, {
 
     转换为
 
-    ```javascripts
+    ```javascript
       $_grAssign = grUpdate(a, {
         b: {
           c: {
@@ -130,7 +142,7 @@ $_grAssign = grUpdate(a, {
 
     转换为
 
-    ```javascripts
+    ```javascript
       $_grAssign = grUpdate(a, {
         b: {
           c: {
@@ -146,7 +158,7 @@ $_grAssign = grUpdate(a, {
 
     转换为
 
-    ```javascripts
+    ```javascript
       $_grAssign = grUpdate(a, {
         b: {
           c: {
@@ -162,7 +174,7 @@ $_grAssign = grUpdate(a, {
 
     转换为
 
-    ```javascripts
+    ```javascript
       $_grAssign = grUpdate(a, {
         b: {
           c: {
@@ -178,7 +190,7 @@ $_grAssign = grUpdate(a, {
 
     转换为
 
-    ```javascripts
+    ```javascript
       $_grAssign = grUpdate(a, {
         b: {
           c: {
