@@ -62,3 +62,8 @@ $_g = test2.a.b.push(1);
 a.push(nextState);
 
 $_grAssign = test.a.b.c = some.c
+
+$_grAssign = state.data[{chartIndex}].merge({
+  subscribed: action.subscribed,
+  subscriptionId: action.subscriptionId
+});

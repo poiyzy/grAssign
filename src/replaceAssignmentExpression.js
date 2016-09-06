@@ -2,7 +2,7 @@ function _defineProperty(t, key, value) {
   return t.callExpression(
     t.memberExpression(
       t.identifier('Object'),
-      t.identifier('_defineProperty')
+      t.identifier('defineProperty')
     ),
     [
       t.objectExpression([]),
