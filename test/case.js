@@ -73,15 +73,33 @@ describe('compile', () => {
   describe('get array index with [i]', () => {
     it('should be compiled', () => {
       expect(compile(`$_grAssign = test2.a.b.c[[i]].apply(function(e) {return e;});`)).toEqual(formatCode(
-        `$_grAssign = grUpdate(test2, { a: { b: { c: Object.defineProperty({}, i, { $apply: function(e) {return e;} }) } } });`
+        `function _defineProperty(obj,key,value){if(keyinobj){Object.defineProperty(obj,key,{value:value,enumerable:true,configurable:true,writable:true});}else{obj[key]=value;}returnobj;}
+
+        $_grAssign = grUpdate(test2, {a: {b: {c: _defineProperty({},i,{$apply:function(e){returne;}})}}});
+        `
       ));
     });
   });
 
   describe('get array index with {i}', () => {
     it('should be compiled', () => {
-      expect(compile(`$_grAssign = test2.a.b.c[{i}].apply(function(e) {return e;});`)).toEqual(formatCode(
-        `$_grAssign = grUpdate(test2, { a: { b: { c: Object.defineProperty({}, i, { $apply: function(e) {return e;} }) } } });`
+      expect(compile(`$_grAssign = test2.a.b.c[[i]].apply(function(e) {return e;});`)).toEqual(formatCode(
+        `function _defineProperty(obj,key,value){if(keyinobj){Object.defineProperty(obj,key,{value:value,enumerable:true,configurable:true,writable:true});}else{obj[key]=value;}returnobj;}
+
+        $_grAssign = grUpdate(test2, {a: {b: {c: _defineProperty({},i,{$apply:function(e){returne;}})}}});
+        `
+      ));
+    });
+  });
+
+  describe('get array index with {i}, generate help method once.', () => {
+    it('should be compiled', () => {
+      expect(compile(`$_grAssign = test2.a.b.c[[i]].apply(function(e) {return e;});$_grAssign = test2.a.b.c[[index]].apply(function(e) {return e;});`)).toEqual(formatCode(
+        `function _defineProperty(obj,key,value){if(keyinobj){Object.defineProperty(obj,key,{value:value,enumerable:true,configurable:true,writable:true});}else{obj[key]=value;}returnobj;}
+
+        $_grAssign = grUpdate(test2, {a: {b: {c: _defineProperty({},i,{$apply:function(e){returne;}})}}});
+        $_grAssign = grUpdate(test2, {a: {b: {c: _defineProperty({},index,{$apply:function(e){returne;}})}}});
+        `
       ));
     });
   });

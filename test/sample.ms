@@ -67,3 +67,13 @@ $_grAssign = state.data[{chartIndex}].merge({
   subscribed: action.subscribed,
   subscriptionId: action.subscriptionId
 });
+
+$_grAssign = state.data[{index}].merge({ a: 1 });
+
+$_grAssign = {
+  data: {
+    [i]: {
+      b: 1
+    }
+  }
+}

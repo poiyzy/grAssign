@@ -29,7 +29,7 @@ module.exports = function(babel) {
                 lhs,
                 t.callExpression(
                   grAssignMethod(state && state.opts && state.opts.method),
-                  replaceAssignmentExpression(t, l, r, 'set')
+                  replaceAssignmentExpression(t, state, l, r, 'set')
                 )
               )
             );
@@ -80,7 +80,7 @@ module.exports = function(babel) {
                 lhs,
                 t.callExpression(
                   grAssignMethod(state && state.opts && state.opts.method),
-                  replaceAssignmentExpression(t, l.object, arg, method_name)
+                  replaceAssignmentExpression(t, state, l.object, arg, method_name)
                 )
               )
             );

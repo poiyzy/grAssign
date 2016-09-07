@@ -1,6 +1,6 @@
 {
   "name": "babel-plugin-gr-assign",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Support manipulating persist data with method chaining.",
   "main": "src/index.js",
   "scripts": {
@@ -26,6 +26,8 @@
   },
   "dependencies": {
     "babel-generator": "^6.14.0",
+    "babel-helpers": "^6.8.0",
+    "babel-preset-es2015": "^6.14.0",
     "babel-traverse": "^6.15.0",
     "babylon": "^6.9.1"
   }

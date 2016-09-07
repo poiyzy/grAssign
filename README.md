@@ -79,11 +79,13 @@ $_grAssign = a.b[{index}].name.set('test');
 
 ```javascript
 $_grAssign = grUpdate(a, {
-  b: Object._defineProperty({}, index, {
-    name: {
-      $set: 'test'
+  b: {
+    [index]: {
+      name: {
+        $set: 'test'
+      }
     }
-  })
+  }
 });
 ```
 
